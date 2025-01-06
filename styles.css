@@ -255,22 +255,6 @@ body {
 .simon-button.blue { background: #3b82f6; }
 .simon-button.yellow { background: #eab308; }
 
-.math-problem {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #1e40af;
-}
-
-.math-input {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    font-size: 1.25rem;
-    width: 100px;
-    text-align: center;
-    border: 2px solid #e2e8f0;
-    border-radius: 0.5rem;
-}
-
 /* Progress Section */
 .progress {
     padding: 4rem 2rem;
