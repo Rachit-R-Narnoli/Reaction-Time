@@ -1,0 +1,385 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e40af;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #1e40af;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    padding: 2rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: white;
+    color: #1e40af;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Exercises Section */
+.exercises {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.exercises h2 {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 2rem;
+}
+
+.exercise-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.reaction-box {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.reaction-box.waiting {
+    background: #ef4444;
+    color: white;
+}
+
+.reaction-box.ready {
+    background: #22c55e;
+    color: white;
+}
+
+.reaction-box.clicked {
+    background: #3b82f6;
+    color: white;
+}
+
+.results {
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.results p {
+    margin: 0.5rem 0;
+}
+
+/* Cognitive Exercises Section */
+.cognitive {
+    padding: 4rem 2rem;
+    background: #f8fafc;
+}
+
+.cognitive h2 {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 2rem;
+}
+
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.exercise-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.exercise-card svg {
+    color: #2563eb;
+    margin-bottom: 1rem;
+    width: 48px;
+    height: 48px;
+}
+
+.exercise-card h3 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.exercise-card p {
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.mini-game {
+    width: 100%;
+    height: 200px;
+    background: #f1f5f9;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    color: #64748b;
+}
+
+/* Game-specific styles */
+.color-challenge-active .mini-game {
+    cursor: pointer;
+    background: var(--game-color, #f1f5f9);
+}
+
+.number-game-active .mini-game {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e40af;
+}
+
+.simon-game-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    width: 200px;
+    height: 200px;
+}
+
+.simon-button {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.simon-button:hover {
+    opacity: 1;
+}
+
+.simon-button.red { background: #ef4444; }
+.simon-button.green { background: #22c55e; }
+.simon-button.blue { background: #3b82f6; }
+.simon-button.yellow { background: #eab308; }
+
+.math-problem {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e40af;
+}
+
+.math-input {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    width: 100px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+}
+
+/* Progress Section */
+.progress {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.progress h2 {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 2rem;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.stat-box h3 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+.stat-box p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+/* Tips Section */
+.tips {
+    padding: 4rem 2rem;
+    background: #f8fafc;
+}
+
+.tips h2 {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 2rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tip-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.tip-card svg {
+    color: #2563eb;
+    margin-bottom: 1rem;
+    width: 48px;
+    height: 48px;
+}
+
+.tip-card h3 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: #1e40af;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .exercises-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .exercise-card {
+        padding: 1.5rem;
+    }
+}
