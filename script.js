@@ -209,57 +209,6 @@ function startSimonGame() {
     setTimeout(playSequence, 1000);
 }
 
-// Mental Math Game
-function startMathGame() {
-    const game = document.getElementById('math-game');
-    let score = 0;
-    let startTime;
-
-    function generateProblem() {
-        const num1 = Math.floor(Math.random() * 20) + 1;
-        const num2 = Math.floor(Math.random() * 20) + 1;
-        const operators = ['+', '-', '*'];
-        const operator = operators[Math.floor(Math.random() * operators.length)];
-        return { num1, num2, operator };
-    }
-
-    function checkAnswer(problem, answer) {
-        let correct;
-        switch (problem.operator) {
-            case '+': correct = problem.num1 + problem.num2; break;
-            case '-': correct = problem.num1 - problem.num2; break;
-            case '*': correct = problem.num1 * problem.num2; break;
-        }
-        return correct === answer;
-    }
-
-    function showProblem() {
-        const problem = generateProblem();
-        game.innerHTML = `
-            <div class="math-problem">
-                ${problem.num1} ${problem.operator} ${problem.num2} = ?
-                <input type="number" class="math-input" autofocus>
-            </div>
-        `;
-
-        const input = game.querySelector('input');
-        input.onkeypress = (e) => {
-            if (e.key === 'Enter') {
-                const answer = parseInt(input.value);
-                if (checkAnswer(problem, answer)) {
-                    score++;
-                    showProblem();
-                } else {
-                    game.innerHTML = `<div class="math-problem">Game Over! Score: ${score}</div>`;
-                }
-            }
-        };
-
-        if (!startTime) startTime = Date.now();
-    }
-
-    showProblem();
-}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
